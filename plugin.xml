@@ -18,8 +18,8 @@
       </config-file>
    </platform>
    <platform name="ios">
-      <dependency id="cordova-plugin-cocoapod-support"/>
-      <pods-config ios-min-version="12.0" use-frameworks="true">
+      <!-- <dependency id="cordova-plugin-cocoapod-support"/> -->
+      <pods-config ios-min-version="11.0" use-frameworks="true">
       </pods-config>
       <config-file parent="/*" target="config.xml">
          <feature name="MatiGlobalIDSDK">
@@ -28,6 +28,14 @@
          </feature>
       </config-file>
       <source-file src="src/ios/MatiSDK.m" />
-      <pod name="Mati-Global-ID-SDK" />
+      <!-- <pod name="Mati-Global-ID-SDK" /> -->
+      <podspec>
+			<config>
+				<source url="https://cdn.cocoapods.org/"/>
+			</config>
+			<pods use-frameworks="true">
+				<pod name="Mati-Global-ID-SDK" />
+			</pods>
+		</podspec>
    </platform>
 </plugin>
